@@ -1,0 +1,58 @@
+html,
+body,
+#app {
+    height: 100%;
+}
+
+canvas {
+    display: block;
+}
+
+body {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+body,
+html,
+div,
+ul,
+li,
+ol,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+a,
+img {
+    margin: 0;
+    padding: 0;
+}
+
+/* 设置滚动条的样式 */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background-color: #fafafa;
+}
+
+/* 滚动槽 */
+::-webkit-scrollbar-track {
+    border-radius: 12px;
+}
+
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 12px;
+}
