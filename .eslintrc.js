@@ -19,12 +19,38 @@ module.exports = {
   plugins: [
     'vue'
   ],
-  // // add your custom rules here
+  // add your custom rules here
   // rules: {
-  //   // allow async-await
-  //   'generator-star-spacing': 'off',
-  //   // allow debugger during development
-  //   'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+  //   'no-eq-null': 2, //不允许对null用==或者!=
+  //   eqeqeq: 1, //要求使用 === 和 !==
+  //   'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off', // 线上只能console.error,测试和开发环境可以随意使用
+  //   'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+  //   'no-useless-escape': 0,
+
+  //   //需要修改的规则
+  //   'no-multiple-empty-lines': [2, {max: 2, maxEOF: 3, maxBOF: 3}], //禁止多条空行，最大2行，首尾3行
+  //   'no-multi-spaces': 0, //禁止多个空格，行尾注释前多个空格忽略
+  //   'no-unused-vars': [
+  //       process.env.NODE_ENV === 'production' ? 'error' : 'warn',
+  //       {vars: 'all', args: 'none', ignoreRestSiblings: false}
+  //   ], //禁止无效定义的变量，默认检测全部变量，不检查参数
+  //   // "indent": [1, 4],
+
+  //   //关闭js，vue规则
+  //   'no-cond-assign': 0, //禁止条件表达式中出现赋值操作符（我觉得可以有赋值操作）
+  //   'no-empty': 0, //禁止空块语句 (我觉得可以有，可以留个位置给todo)
+  //   'no-mixed-spaces-and-tabs': 0, //暂时先忽略，代码太多不好改，该规则不接受--fix指令
+  //   'no-obj-calls': 0, //禁止将全局对象当作函数进行调用（但我觉得没啥不好的）
+  //   'valid-jsdoc': 0, //代码注释风格
+  //   'no-prototype-builtins': 0, //禁止直接使用 Object.prototypes 的内置属性
+
+  //   // 关闭专门的react规则
+  //   'react/no-find-dom-node': 0,
+  //   'react/no-did-mount-set-state': 0, //Prevent usage of setState in componentDidMount
+  //   'react/no-did-update-set-state': 0, //Prevent usage of setState in componentDidUpdate
+  //   'react/no-string-refs': 0, //Prevent using string references in ref attribute
+  //   'react/no-access-state-in-setstate': 0, //Prevent using this.state inside this.setState
+  //   'react/prop-types': 0 //Prevent missing props validation in a React component definition(项目里基本就没用这个，虽说这是个规范)
   // }
   rules: {
     "no-useless-escape": 0,

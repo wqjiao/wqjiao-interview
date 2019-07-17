@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
@@ -14,4 +14,8 @@ export default {
 <style lang="scss" type="text/css">
 // 包括全局可用的 变量、工具函数等
 @import './assets/scss/index.scss';
+#app {
+  overflow-x: initial;
+  color: $text-color;
+}
 </style>

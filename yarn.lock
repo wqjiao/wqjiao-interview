@@ -262,6 +262,13 @@ amdefine@>=0.0.4:
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
   integrity sha1-SlKCrBZHKek2Gbz9OtFR+BfOkfU=
 
+animation-util@^1.0.10:
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/animation-util/-/animation-util-1.0.10.tgz#d706bebf21918ac76c2fd4a0b3b9f9361713fcea"
+  integrity sha512-0Jo+P0NkaXV1IC3KQXDqQ/5eR0LJBIpLEfZRS3Aq9OfD5kfAKaYgXqdK/JOBw2CtK7H2vYU2GKLygQLUdwjkSA==
+  dependencies:
+    object-assign "^4.1.1"
+
 ansi-escapes@^3.0.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/ansi-escapes/-/ansi-escapes-3.2.0.tgz#8780b98ff9dbf5638152d1f1fe5c1d7b4442976b"
@@ -356,7 +363,7 @@ array-equal@^1.0.0:
   resolved "https://registry.yarnpkg.com/array-equal/-/array-equal-1.0.0.tgz#8c2a5ef2472fd9ea742b04c77a75093ba2757c93"
   integrity sha1-jCpe8kcv2ep0KwTHenUJO6J1fJM=
 
-array-find-index@^1.0.1:
+array-find-index@^1.0.1, array-find-index@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/array-find-index/-/array-find-index-1.0.2.tgz#df010aa1287e164bbda6f9723b0a96a1ec4187a1"
   integrity sha1-3wEKoSh+Fku9pvlyOwqWoexBh6E=
@@ -1387,6 +1394,20 @@ binary-extensions@^1.0.0:
   resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-1.13.1.tgz#598afe54755b2868a5330d2aff9d4ebb53209b65"
   integrity sha512-Un7MIEDdUC5gNpcGDV97op1Ywk748MpHcFTHoYs6qnj1Z3j7I53VG3nwZhKzoBZmbdRNnb6WRdFlwl7tSDuZGw==
 
+bindingx-parser@0.x.x:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/bindingx-parser/-/bindingx-parser-0.0.3.tgz#b15e9b56115c399146aa56e3a96fac34098297ad"
+  integrity sha512-HPRn/9B+EN9C0zh2uhUTMGiBsQ12JcLoDB4xWnVloeRR4s+Cdd2gLAfhgrG10fqyxypMx/INVTotYchSpqXnnw==
+
+bindingx-web-polyfill@0.x.x:
+  version "0.1.18"
+  resolved "https://registry.yarnpkg.com/bindingx-web-polyfill/-/bindingx-web-polyfill-0.1.18.tgz#4531bcef0a2c780731b9d0a0f651807109f28270"
+  integrity sha512-ASiQQdqEipF1VTmL6U47YWsTSF+KMJARaqkqycoJ2ZsB2/iOZHjI+owYQ09Mq8TJ+GVRhoySmGUh9j2XSWEo0g==
+  dependencies:
+    animation-util "^1.0.10"
+    object-assign "^4.1.1"
+    simple-lodash "^0.0.3"
+
 block-stream@*:
   version "0.0.9"
   resolved "https://registry.yarnpkg.com/block-stream/-/block-stream-0.0.9.tgz#13ebfe778a03205cfe03751481ebb4b3300c126a"
@@ -1888,6 +1909,16 @@ class-utils@^0.3.5:
     define-property "^0.2.5"
     isobject "^3.0.0"
     static-extend "^0.1.1"
+
+classname@^0.0.0:
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/classname/-/classname-0.0.0.tgz#43d171b484e354c7a293a5b78004df6852db20d6"
+  integrity sha1-Q9FxtITjVMeik6W3gATfaFLbINY=
+
+classnames@^2.2.6:
+  version "2.2.6"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
+  integrity sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==
 
 clean-css@4.2.x:
   version "4.2.1"
@@ -6146,6 +6177,15 @@ minizlib@^1.2.1:
   dependencies:
     minipass "^2.2.1"
 
+mint-ui@^2.2.13:
+  version "2.2.13"
+  resolved "https://registry.yarnpkg.com/mint-ui/-/mint-ui-2.2.13.tgz#856a2cba9608c6ecf21f0e521ce89ed8ddfe33d3"
+  integrity sha512-Xz1SFagHSzKOprwQv3fcekXT5RJvhh939zwZHcWeazk1OJrCjsD4I2qm49AEUCfT1AoYzC+rsZIwGP/J6LwVVw==
+  dependencies:
+    array-find-index "^1.0.2"
+    raf.js "0.0.4"
+    vue-lazyload "^1.0.1"
+
 mississippi@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/mississippi/-/mississippi-2.0.0.tgz#3442a508fafc28500486feea99409676e4ee5a6f"
@@ -7865,6 +7905,11 @@ querystringify@^2.1.1:
   resolved "https://registry.yarnpkg.com/querystringify/-/querystringify-2.1.1.tgz#60e5a5fd64a7f8bfa4d2ab2ed6fdf4c85bad154e"
   integrity sha512-w7fLxIRCRT7U8Qu53jQnJyPkYZIaR4n5151KMfcJlO/A9397Wxb1amJvROTK6TOnp7PfoAmg/qXiNHI+08jRfA==
 
+raf.js@0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/raf.js/-/raf.js-0.0.4.tgz#f15af445d241b27fa7131a57450b67ef9c402fec"
+  integrity sha1-8Vr0RdJBsn+nExpXRQtn75xAL+w=
+
 randomatic@^3.0.0:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/randomatic/-/randomatic-3.1.1.tgz#b776efc59375984e36c537b2f51a1f0aff0da1ed"
@@ -8600,6 +8645,16 @@ signal-exit@^3.0.0, signal-exit@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
   integrity sha1-tf3AjxKH6hF4Yo5BXiUTK3NkbG0=
+
+simple-lodash@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/simple-lodash/-/simple-lodash-0.0.2.tgz#d8eb4a60e996a550a5c1adda8efbb762989246b1"
+  integrity sha512-BuCCKYqzrgfAWEyaVbGKGqsdYon9DFNPKlyH+7Nvci3i+HXy5fPkbOdLjWTJEY1MPkRvvAPWhu31d1YkBidVYw==
+
+simple-lodash@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/simple-lodash/-/simple-lodash-0.0.3.tgz#612ae1c05f6908481d8c342ecbe3663d237941e0"
+  integrity sha512-z1E8o+8lTFHyL4DKecuAQ2UgwWbgVUTJ7iyglCsMz4wGscQ/+A0CqIIz8ZOcTpUbMc4yc+Bwk5Gn+2cuvIRnLQ==
 
 simple-swizzle@^0.2.2:
   version "0.2.2"
@@ -9463,6 +9518,11 @@ unique-slug@^2.0.0:
   dependencies:
     imurmurhash "^0.1.4"
 
+universal-env@0.x.x:
+  version "0.6.6"
+  resolved "https://registry.yarnpkg.com/universal-env/-/universal-env-0.6.6.tgz#dd5adf816a8ec3e908d4848e1714dfe30dd8a970"
+  integrity sha512-CqBdTKFStTEV7wETHjWm7CDIbSdUxIlN3zQ5xraTG6Wb1XEmBgyW1pu8lJW0buRXjACgjrD+pr97akumbQ0Y6A==
+
 unpipe@1.0.0, unpipe@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/unpipe/-/unpipe-1.0.0.tgz#b2bf4ee8514aae6165b4817829d21b2ef49904ec"
@@ -9638,6 +9698,11 @@ vue-jest@^1.0.2:
     source-map "^0.5.6"
     tsconfig "^7.0.0"
     vue-template-es2015-compiler "^1.5.3"
+
+vue-lazyload@^1.0.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/vue-lazyload/-/vue-lazyload-1.3.1.tgz#75715bc091d8453e1f3d6daca74b8e7254c297d1"
+  integrity sha512-sQ4O3TRq95SL3MyK9VaLI/KGFoEK5054/gtDvSwem+UvSGQYy94DX6VzOeCHc/oTQg3r5M8HSlMSBBQu873Mww==
 
 vue-loader@^13.3.0:
   version "13.7.3"
@@ -9855,6 +9920,30 @@ websocket-extensions@>=0.1.1:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/websocket-extensions/-/websocket-extensions-0.1.3.tgz#5d2ff22977003ec687a4b87073dfbbac146ccf29"
   integrity sha512-nqHUnMXmBzT0w570r2JpJxfiSD1IzoI+HGVdd3aZ0yNi3ngvQ4jv1dtHt5VGxfI2yj5yqImPhOK4vmIh2xMbGg==
+
+weex-bindingx@0.0.17:
+  version "0.0.17"
+  resolved "https://registry.yarnpkg.com/weex-bindingx/-/weex-bindingx-0.0.17.tgz#08986506c4ec998f8864f0c4635ba646c0911199"
+  integrity sha512-9FtaX9Gadc+eROvPTsO1yCSYx7fhCsVv01PeaLv4hh+zTqGtlesY2/sc5Wb0u6ExzNO9pkqj73OWbUkQB0A5mQ==
+  dependencies:
+    bindingx-parser "0.x.x"
+    bindingx-web-polyfill "0.x.x"
+    object-assign "^4.1.1"
+    simple-lodash "^0.0.2"
+    universal-env "0.x.x"
+
+weex-ui@^0.6.16:
+  version "0.6.16"
+  resolved "https://registry.yarnpkg.com/weex-ui/-/weex-ui-0.6.16.tgz#6d6971ba3617e42965721d5b885a15dffe0981e4"
+  integrity sha512-p7D80wyhQmjTJFaRNQIy38f50zVtXrZQOnTzJCMJnBgx50YYwrHAXUI3S00ojsnsE9VTZ1mjL5cYuuR+D64BhA==
+  dependencies:
+    url-parse "^1.4.3"
+    weex-bindingx "0.0.17"
+
+weex@^0.0.0:
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/weex/-/weex-0.0.0.tgz#c1c2906392206f3adfeae3e3b8fe499f63700bb6"
+  integrity sha1-wcKQY5Igbzrf6uPjuP5Jn2NwC7Y=
 
 whatwg-encoding@^1.0.1, whatwg-encoding@^1.0.3:
   version "1.0.5"
