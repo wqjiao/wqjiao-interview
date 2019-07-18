@@ -1,49 +1,49 @@
 <template>
   <!-- Header 导航 -->
-  <div class="header">
-    <ul class="header_list">
-      <li
-        :class="{'header_item': true, 'active': item.type === typeed}"
-        v-for="(item, index) in headerList"
-        :key="index"
-        @click="changeTab(item.type)"
-      >{{ item.name }}</li>
-    </ul>
-    {{headerList.length}}
-  </div>
+  <mt-header :fixed="fixed" :title="title" class="header">
+    <!-- 首页Logo || 返回首页 -->
+    <mt-button slot="left" v-if="isHome">
+      <img slot="icon" src="@/assets/logo.png" style="width: 48%;" alt="logo">
+    </mt-button>
+    <mt-button slot="left" icon="back" v-else @click="goBack"></mt-button>
+    <!-- <router-link to="/" slot="left" v-else>
+      <mt-button icon="back"></mt-button>
+    </router-link> -->
+
+    <router-link to="/add/question" slot="right" v-show="isRight">
+      <img src="@/assets/plus_active.png" alt="新增题目">
+    </router-link>
+  </mt-header>
 </template>
 
 <script>
 export default {
   name: 'Header',
   props: {
-    typeed: {
+    title: {
       type: String,
-      default: 'html'
+      default: '小小题集合'
     },
-    changeTab: Function
+    isHome: {
+      type: Boolean,
+      default: true
+    },
+    isRight: {
+      type: Boolean,
+      default: true
+    },
+    fixed: {
+      type: Boolean,
+      default: false
+    }
   },
-  data: () => ({
-    headerList: []
-  }),
-  created() {
-    this.getHeader();
+  create() {
+    console.log('***', isHome, title, fixed)
   },
   methods: {
-    getHeader() {
-      this.$axios({
-        method: "get",
-        url: "/interview/nav"
-      })
-        .then(res => {
-          const data = res.data.data;
-
-          console.log(data);
-          this.headerList = data;
-        })
-        .catch(error => {
-          console.log("error: " + error);
-        });
+    // 返回上一层路由
+    goBack() {
+      this.$router.go(-1);
     }
   }
 };
@@ -51,35 +51,8 @@ export default {
 
 <style scoped lang="scss" type="text/css">
 .header {
-  background-color: rgb(255, 255, 255);
-  height: 1rem;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  .header_list {
-    height: 100%;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    line-height: 1;
-  }
-  .header_item {
-    height: 100%;
-    display: flex;
-    flex-shrink: 0;
-    align-items: center;
-    padding: 0 .533333rem /* 20/37.5 */;
-    text-align: center;
-    font-size: 0.426667rem /* 16/37.5 */;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    -webkit-line-clamp: 1;
-    cursor: pointer;
-
-    &.active,
-    &:hover,
-    &:focus {
-      color: $primary-color;
-    }
-  }
+  background: $color-white;
+  color: $heading-color;
+  border-bottom: .026667rem /* 1/37.5 */ solid #f1f1f1;
 }
 </style>

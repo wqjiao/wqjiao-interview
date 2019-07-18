@@ -1,7 +1,12 @@
 <template>
   <div class="interview_list">
-    <!-- Header 导航 -->
-    <Header :typeed="typeed" :changeTab="changeTab" />
+    <div class="header_fixed">
+      <!-- Header 头部信息 -->
+      <Header />
+
+      <!-- Navigate 导航 -->
+      <Navigate :typeed="typeed" :changeTab="changeTab" />
+    </div>
 
     <!-- 小标题 指数 -->
     <Level :leveled="leveled" :changeLevel="changeLevel" :length="contentList.length" />
@@ -30,7 +35,8 @@
 </template>
 
 <script>
-import Header from "@/components/Header";
+import Header from '@/components/Header';
+import Navigate from "@/components/Navigate";
 import Level from "@/components/Level";
 import Without from "@/components/Without";
 
@@ -38,6 +44,7 @@ export default {
   name: "List",
   components: {
     Header,
+    Navigate,
     Level,
     Without
   },
@@ -91,6 +98,16 @@ export default {
 <style scoped lang="scss" type="text/css">
 .interview_list {
   height: 100%;
+}
+.header_fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);
+  transition: all .2s;
+  transform: translateZ(0);
+  background-color: rgb(255, 255, 255);
 }
 // 列表内容
 .content {
