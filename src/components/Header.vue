@@ -6,12 +6,9 @@
       <img slot="icon" src="@/assets/logo.png" style="width: 48%;" alt="logo">
     </mt-button>
     <mt-button slot="left" icon="back" v-else @click="goBack"></mt-button>
-    <!-- <router-link to="/" slot="left" v-else>
-      <mt-button icon="back"></mt-button>
-    </router-link> -->
 
     <router-link to="/add/question" slot="right" v-show="isRight">
-      <img src="@/assets/plus_active.png" alt="新增题目">
+      <img src="@/assets/plus_active.png" alt="新增题目" v-if="isRight">
     </router-link>
   </mt-header>
 </template>

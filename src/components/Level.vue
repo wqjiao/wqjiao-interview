@@ -4,7 +4,7 @@
     <ul class="nav_list">
       <li
         :class="{'nav_item': true, 'active': item.value === leveled}"
-        v-for="(item, index) in indexList"
+        v-for="(item, index) in levelList"
         :key="index"
         @click="changeLevel(item.value)"
       >
@@ -29,7 +29,7 @@ export default {
     }
   },
   data: () => ({
-    indexList: [{
+    levelList: [{
       value: '',
       label: '全部'
     }, {
