@@ -19,6 +19,7 @@
       </router-link>
       <ul class="detail_list">
         <li class="detail_item" v-for="(item, index) in detail.data" :key="index">
+          <!-- <pre>{{item.content}}</pre> -->
           <div v-html="item.content"></div>
           <div class="desc_give">
             <img src="@/assets/give_gray.png" style="margin-right: .266667rem" alt="点赞">

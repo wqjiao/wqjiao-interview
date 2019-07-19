@@ -22,11 +22,12 @@ export default {
 
 <style scoped lang="scss" type="text/css">
 .fixed_button {
+  display: flex;
   position: fixed;
   bottom: 0;
   width: 100%;
   box-sizing: border-box;
-  display: flex;
+  z-index: 4;
   button {
     flex: 1;
   }

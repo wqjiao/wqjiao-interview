@@ -4,14 +4,16 @@
     <!-- 固定头部: Boolean 类型需要使用 v-bind -->
     <Header :fixed="true" :isHome="false" :isRight="false" />
 
-    <!-- 标题 -->
     <DetailBox title="题目标题" :isFixed="true">
       <template slot="title">难度指数：{{ detail.levelDesc }}</template>
       {{ detail.title }}
     </DetailBox>
 
-    <!-- 描述详情 -->
     <DetailBox title="描述信息">{{ detail.desc }}</DetailBox>
+
+    <!-- <DetailBox title="答案">
+      <Codemirror :content="content" :change="handleChange" />
+    </DetailBox> -->
 
     <DetailBox title="答案">
       <textarea
@@ -30,19 +32,21 @@
 import Header from '@/components/Header';
 import DetailBox from '@/components/DetailBox';
 import FixedBotton from '@/components/FixedBotton';
+import Codemirror from '@/components/Codemirror';
 import {Toast} from 'mint-ui';
 
 export default {
   name: 'Answer',
+  components: {
+    Header,
+    DetailBox,
+    FixedBotton,
+    Codemirror
+  },
   data: () => ({
     detail: {}, // 详细内容
     content: '' // 内容
   }),
-  components: {
-    Header,
-    DetailBox,
-    FixedBotton
-  },
   created() {
     this.getDetail();
   },
@@ -86,10 +90,14 @@ export default {
       })
         .then(res => {
           console.log('success', res)
+          this.$router.go(-1);
         })
         .catch(error => {
           console.log("error: " + error);
         });
+    },
+    handleChange() {
+      //
     }
   }
 };

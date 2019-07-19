@@ -103,6 +103,7 @@ export default {
       })
         .then(res => {
           console.log('success', res)
+          this.$router.go(-1);
         })
         .catch(error => {
           console.log("error: " + error);

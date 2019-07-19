@@ -4,15 +4,24 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import Axios from './utils/axios'
-// import ElementUI from 'element-ui'
-// import 'element-ui/lib/theme-chalk/index.css'
+
 import Mint from 'mint-ui'
 import 'mint-ui/lib/style.css'
 
+import VueCodemirror from 'vue-codemirror'
+// require styles
+import 'codemirror/lib/codemirror.css'
+
 Vue.use(Mint)
-// Vue.use(ElementUI)
 Vue.config.productionTip = false
 Vue.prototype.$axios = Axios
+Vue.use(
+  VueCodemirror,
+  /* {
+    options: { theme: 'base16-dark', ... },
+    events: ['scroll', ...]
+  } */
+)
 
 /* eslint-disable no-new */
 new Vue({
