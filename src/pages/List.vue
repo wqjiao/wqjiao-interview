@@ -11,6 +11,12 @@
     <!-- 小标题 指数 -->
     <Level :leveled="leveled" :changeLevel="changeLevel" :length="contentList.length" />
 
+    <div>
+      <input type="text" v-model="inputTitle" placeholder="请输入标题" />
+      <input type="text" v-model="inputDesc" placeholder="请输入描述" />
+      <input type="button" value="查询" @click="getDimData()" />
+    </div>
+
     <!-- 内容 -->
     <div class="content" id="listContent" v-if="contentList.length > 0">
       <ul class="content_list">
@@ -51,7 +57,9 @@ export default {
   data: () => ({
     typeed: 'html', // 类型
     leveled: '', // 选定指数, 默认全部
-    contentList: [] // 内容列表
+    contentList: [], // 内容列表
+    inputTitle: '',
+    inputDesc: ''
   }),
   created() {
     this.getData(this.typeed, ''); // 获取对应列表
@@ -75,6 +83,27 @@ export default {
         params: {
           type,
           level: level === '' ? undefined : level
+        }
+      })
+        .then(res => {
+          const data = res.data.data;
+
+          console.log(data);
+          this.contentList = data;
+        })
+        .catch(error => {
+          console.log("error: " + error);
+        });
+    },
+    getDimData() {
+      this.$axios({
+        method: "post",
+        url: "/interview/list/search",
+        data: {
+          title: this.inputTitle,
+          desc: this.inputDesc,
+          type: this.typeed,
+          level: this.leveled
         }
       })
         .then(res => {
